@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>정부대전청사 공무원노조연합회</title>
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('배경.png') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Noto Sans KR", sans-serif;
+        }
+
+        .box {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            padding: 45px 30px;
+            border-radius: 25px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            width: 90%;
+            max-width: 550px;
+            box-sizing: border-box;
+        }
+
+        h2 { 
+            font-size: 1.3rem; 
+            margin-bottom: 8px; 
+            word-break: keep-all; 
+            line-height: 1.4; 
+        }
+
+        p { 
+            font-size: 0.9rem; 
+            margin-bottom: 12px; 
+            opacity: 0.8; 
+        }
+
+        /* PC: 한 줄 유지 */
+        .notice {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            white-space: nowrap;
+        }
+
+        /* 기본은 줄바꿈 숨김 */
+        .mobile-break {
+            display: none;
+        }
+
+        /* 📱 모바일에서만 줄바꿈 적용 */
+        @media (max-width: 600px) {
+            .notice {
+                white-space: normal;
+                font-size: 0.75rem;
+            }
+
+            .mobile-break {
+                display: block; /* 줄바꿈 역할 */
+            }
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #ff5252;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>정부대전청사 공무원노조연합회 국가유산청</h2>
+        <p>비밀번호를 입력하여 접속하세요.</p>
+        <p class="notice">
+            *네이버 플레이스 예약창 요청사항에 본인의 
+            <span class="mobile-break"></span>
+            소속과 비밀번호를 적어주세요*
+        </p>
+
+        <input type="password" id="pw" placeholder="비밀번호 입력" onkeypress="if(event.keyCode==13) {checkPassword();}">
+        <button onclick="checkPassword()">확인</button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const passwordInput = document.getElementById('pw').value;
+            const correctPassword = "1357";
+
+            if (passwordInput === correctPassword) {
+                window.location.href = "https://naver.me/xcnavVEs";
+            } else {
+                alert("비밀번호가 틀렸습니다. 다시 입력해주세요.");
+                document.getElementById('pw').value = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
